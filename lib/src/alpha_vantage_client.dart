@@ -62,7 +62,7 @@ class AlphaVantageClient {
         queryParameters: queryParams);
     String url = uriRequest.toString();
     print("Calling client with URL: " + url);
-    Future<Response> response =  this._client.get(url);
+    Future<Response> response =  this._client.get(Uri.parse(url));
     response.then((Response response) {
       print("Reponse from server: " + response.body.toString());
     });
